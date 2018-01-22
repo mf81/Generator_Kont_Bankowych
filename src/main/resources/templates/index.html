@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Generator Kont Bankowych</title>
@@ -7,6 +7,13 @@
 <body><h1>Here will be Bank Account Generator </h1>
 <p>It's comming soon...</p>
 <p>or not ;D</p>
-<p>be good</p>
+<p>be good dddddddaaaa</p>
+
+
+<select>
+    <option th:each="bank:${banki}" th:value="${bank.key}" th:text="${bank.value}"></option>
+</select>
+
+
 </body>
 </html>
