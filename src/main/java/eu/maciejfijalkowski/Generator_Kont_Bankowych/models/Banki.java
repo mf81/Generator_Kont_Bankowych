@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Banki {
-    public static Map<String,String> BankiMapa (){
+    public Map<String,String> BankiMapa (){
         Map<String,String> bank = new HashMap<String,String>();
         bank.put("1", "Pocztowy");
         bank.put("2", "PKO");

@@ -14,6 +14,12 @@
     <option th:each="bank:${banki}" th:value="${bank.key}" th:text="${bank.value}"></option>
 </select>
 
+<select>
+    <option th:each="bank:${bankiZObiektu}" th:value="${bank.id}" th:text="${bank.name}"></option>
+</select>
+
+<p th:text="${txt}"></p>
+
 
 </body>
 </html>
