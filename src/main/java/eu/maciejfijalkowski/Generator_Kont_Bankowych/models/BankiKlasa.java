@@ -1,12 +1,12 @@
 package eu.maciejfijalkowski.Generator_Kont_Bankowych.models;
 
-public class BankiKlasa {
+public class BankiKlasa{
     private String id;
     private String name;
 
     public BankiKlasa(String id, String name) {
-        this.id = id;
-        this.name = name;
+       this.id = id;
+       this.name = name;
     }
 
     public String getId() {
