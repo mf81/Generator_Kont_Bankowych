@@ -30,21 +30,19 @@ public class MainController {
 
     @PostMapping("/generate")
     public String chooseBank (@RequestParam(value="section") String sectionValue,BankiZbior bankiZbior,ModelMap modelMap){
-        System.out.println("Jestem " + sectionValue);
 
         if (sectionValue.equals("1")) {
             modelMap.addAttribute("nazwaBanku", bankiZbior.getSelection(0).getName().toUpperCase());
-            return bankiZbior.getSelection(0).getName().toLowerCase().toString();
+            return bankiZbior.getSelection(0).getName().toLowerCase();
         }
         if (sectionValue.equals("2")) {
             modelMap.addAttribute("nazwaBanku",bankiZbior.getSelection(1).getName().toUpperCase());
-            return bankiZbior.getSelection(1).getName().toLowerCase().toString();
+            return bankiZbior.getSelection(1).getName().toLowerCase();
         }
         if (sectionValue.equals("3")) {
             modelMap.addAttribute("nazwaBanku",bankiZbior.getSelection(2).getName().toUpperCase());
-            return bankiZbior.getSelection(2).getName().toLowerCase().toString();
+            return bankiZbior.getSelection(2).getName().toLowerCase();
         }
-
 
         modelMap.addAttribute("bankiZObiektu", bankiZbior.getListaBankow());
         return "index";
