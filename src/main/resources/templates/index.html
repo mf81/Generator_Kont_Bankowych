@@ -10,15 +10,19 @@
 <p>be good dddddddaaaa</p>
 
 
-<select>
-    <option th:each="bank:${banki}" th:value="${bank.key}" th:text="${bank.value}"></option>
-</select>
 
-<select>
-    <option th:each="bank:${bankiZObiektu}" th:value="${bank.id}" th:text="${bank.name}"></option>
-</select>
+<form action="/generate" th:object="${bankiZObiektu}" method="post">
 
-<p th:text="${txt}"></p>
+    <select name="section" id="section">
+        <option th:each="bank:${bankiZObiektu}" th:value="${bank.id}" th:text="${bank.name}"></option>
+    </select>
+    <br/>
+    <input type="submit" value="Wyślij!"/>
+</form>
+
+
+
+
 
 
 </body>

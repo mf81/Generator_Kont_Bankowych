@@ -27,4 +27,8 @@ public class BankiZbior {
     public void setListaBankow(List<BankiKlasa> listaBankow) {
         this.listaBankow = listaBankow;
     }
+
+    public BankiKlasa getSelection (int id){
+        return listaBankow.get(id);
+    }
 }
