@@ -3,11 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+    td,th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    </style>
 </head>
 <body>
 
 <h1 th:text="${nazwaBanku}"></h1>
 <h4 th:text="${bankNumber}"></h4>
+
+
+    <form action="/generatenumber"  method="post">
+        <table>
+    <tr>
+        <th>Suma kontrolna</th>
+        <th>Nazwa banku</th>
+        <th>SWRK Banku</th>
+        <th>Typ konta (E/F)</th>
+        <th>ADM</th>
+        <th>Nr Wspólnoty</th>
+        <th>Nr Kontrahenta</th>
+    </tr>
+    <tr style='text-align:center; vertical-align:middle; border: 1px;'>
+        <td>XX</td>
+        <td th:text="${bankNumber}"></td>
+        <td>0169</td>
+        <td>
+            <select name="sectio" id="sectio">
+            <option th:each="typ:${TypZObiektu}" th:value="${typ.numberEF}" th:text="${typ.nameEF}"></option>
+            </select>
+        </td>
+        <td>
+            <select name="section" id="section">
+            <option th:each="adm:${ADMZObiektu}" th:value="${adm.admNumber}" th:text="${adm.admName}"></option>
+            </select>
+        </td>
+        <td><input></td>
+        <td><input></td>
+    </tr>
+
+
+</table>
+    <input type="submit" value="Generuj..."/>
+</form>
 
 </body>
 </html>

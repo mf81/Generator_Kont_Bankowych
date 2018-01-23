@@ -1,6 +1,9 @@
 package eu.maciejfijalkowski.Generator_Kont_Bankowych.controllers;
 
+import eu.maciejfijalkowski.Generator_Kont_Bankowych.models.TypKonta;
+import eu.maciejfijalkowski.Generator_Kont_Bankowych.models.services.ADMZbior;
 import eu.maciejfijalkowski.Generator_Kont_Bankowych.models.services.BankiZbior;
+import eu.maciejfijalkowski.Generator_Kont_Bankowych.models.services.TypKontaZbior;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,16 +16,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
-
-
     @Autowired
     BankiZbior bankiZbior;
 
+    @Autowired
+    ADMZbior admZbior;
+    @Autowired
+    TypKontaZbior typKontaZbior;
+
     @GetMapping("/")
     public String index(ModelMap modelMap, BankiZbior bankiZbior){
-
         modelMap.addAttribute("bankiZObiektu", bankiZbior.getListaBankow());
-
         return "index";
     }
 
@@ -42,6 +46,8 @@ public class MainController {
         if (sectionValue.equals("1")) {
             modelMap.addAttribute("nazwaBanku",bankiZbior.getSelection(1).getName().toUpperCase());
             modelMap.addAttribute("bankNumber", bankiZbior.getSelection(1).getBankNumber());
+            modelMap.addAttribute("TypZObiektu", typKontaZbior.getTypKonta());
+            modelMap.addAttribute("ADMZObiektu", admZbior.getAdmy());
             return "pocztowy";
         }
         if (sectionValue.equals("2")) {
