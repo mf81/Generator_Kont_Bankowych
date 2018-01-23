@@ -15,9 +15,9 @@ public class BankiZbior {
 
     public BankiZbior(){
         listaBankow = new ArrayList<BankiKlasa>();
-        listaBankow.add(new BankiKlasa("1","PKO"));
-        listaBankow.add(new BankiKlasa("2","Pocztowy"));
-        listaBankow.add(new BankiKlasa("3","Nord"));
+        listaBankow.add(new BankiKlasa("0","PKO BP","1020 4274"));
+        listaBankow.add(new BankiKlasa("1","Pocztowy","1320 1856"));
+        listaBankow.add(new BankiKlasa("2","Nord Bank","1370 1398"));
     }
 
     public List<BankiKlasa> getListaBankow() {
