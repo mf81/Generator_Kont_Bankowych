@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .center {
+            margin: auto;
+            text-align: center;
+            border:0;
+        }
+    </style>
+</head>
+<body>
+
+<h4 class="center">Konto eksploatacji:</h4>
+<h1 class="center" th:each="skladowe:${finalAccountNumber}" th:text="${skladowe.sumaKontrolna +' '
+                                                      +skladowe.bankNumber +' '
+                                                      +skladowe.swrk +' '
+                                                      +skladowe.numberEF
+                                                      +skladowe.admNumber +' '
+                                                      +skladowe.nazwaWM +' '
+                                                      +skladowe.nazwaKlienta
+
+                                                            }"></h1>
+
+
+<h4 class="center">Konto funduszu remontowego:</h4>
+<h1 class="center" th:each="skladowe:${finalAccountNumber}" th:text="${skladowe.sumaKontrolna +' '
+                                                      +skladowe.bankNumber +' '
+                                                      +skladowe.swrk +' '
+                                                      +skladowe.numberEF
+                                                      +skladowe.admNumber +' '
+                                                      +skladowe.nazwaWM +' '
+                                                      +skladowe.nazwaKlienta
+
+                                                            }"></h1>
+
+
+</body>
+</html>

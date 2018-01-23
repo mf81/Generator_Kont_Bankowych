@@ -16,7 +16,7 @@
 <h4 th:text="${bankNumber}"></h4>
 
 
-    <form action="/generatenumber"  method="post">
+    <form action="/generatenumber" th:object="${finalAccountNumber}" method="post">
         <table>
     <tr>
         <th>Suma kontrolna</th>
@@ -32,22 +32,25 @@
         <td th:text="${bankNumber}"></td>
         <td>0169</td>
         <td>
-            <select name="sectio" id="sectio">
+            <select name="numberEF" id="numberEF">
             <option th:each="typ:${TypZObiektu}" th:value="${typ.numberEF}" th:text="${typ.nameEF}"></option>
             </select>
         </td>
         <td>
-            <select name="section" id="section">
+            <select name="admNumber" id="admNumber">
             <option th:each="adm:${ADMZObiektu}" th:value="${adm.admNumber}" th:text="${adm.admName}"></option>
             </select>
         </td>
-        <td><input></td>
-        <td><input></td>
+        <td><input name="nazwaWM"></td>
+        <td><input name="nazwaKlienta"></td>
     </tr>
 
 
 </table>
-    <input type="submit" value="Generuj..."/>
+        <input type="hidden" name="nazwaBanku" th:value="${nazwaBanku}"></input>
+        <input type="hidden" name="bankNumber" th:value="${bankNumber}"></input>
+        <input type="hidden" name="swrk" value="0169"></input>
+        <input type="submit" value="Generuj..."/>
 </form>
 
 </body>
